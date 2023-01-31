@@ -1,9 +1,29 @@
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
-  );
-}
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useRoutes,
+} from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
 
-export default App;
+const App = () => {
+  let routes = useRoutes([
+    { path: "/", element: <Home /> },
+    // ...
+  ]);
+  return routes;
+};
+
+const AppWrapper = () => {
+  return (
+    <>
+      <Header />
+      <Router>
+        <App />
+      </Router>
+    </>
+  );
+};
+
+export default AppWrapper;
