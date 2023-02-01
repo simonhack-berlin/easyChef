@@ -1,7 +1,18 @@
-.header {
+.header h1{
+    padding: .66rem 0;
+    text-align: center;
+    background-color: #cca353;
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-image: url('../../public/img/background_filter.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
