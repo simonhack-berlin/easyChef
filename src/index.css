@@ -13,6 +13,34 @@ code {
     monospace;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #cca353;
+}
+
+.button {
+  border-radius: 4px;
+  padding: .72rem 1.7rem;
+  background-color: #cca353;
+  border: #cca353;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color .5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #a7874b;
+}
+
 .margin {
   margin: 0% 5%;
+}
+
+.margin-bottom {
+  margin-bottom: 0.8rem;
 }
