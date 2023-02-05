@@ -1,12 +1,12 @@
-import React from 'react'
-import Veggie from '../components/Veggie';
+import React from 'react';
+import Header from '../components/Header/Header';
 import Recommended from '../components/Recommended';
 
 function Home() {
   return (
     <>
-        <Recommended />
-        <Veggie />
+      <Header searchBar/>
+      <Recommended />
     </>
   )
 }
