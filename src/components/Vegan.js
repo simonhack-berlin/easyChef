@@ -14,7 +14,7 @@ function VeganComponent() {
       if (check) {
         setVegan(JSON.parse(check));
       } else {
-        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=vegan&number=6`);
+        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=vegan&number=5`);
         const data = await api.json();
         console.log(data);
         localStorage.setItem('vegan', JSON.stringify(data.recipes));
