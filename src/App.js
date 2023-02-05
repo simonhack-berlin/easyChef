@@ -2,23 +2,28 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useRoutes,
 } from "react-router-dom";
-import Header from "./components/Header";
 import Home from "./pages/Home";
+import RecipeDetails from "./pages/RecipeDetails";
+import Searched from "./pages/Searched";
+import Vegan from "./pages/Vegan";
+import Vegetarian from "./pages/Vegetarian";
 
 const App = () => {
-  let routes = useRoutes([
-    { path: "/", element: <Home /> },
-    // ...
-  ]);
-  return routes;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/vegan" element={<Vegan />} />
+      <Route path="/vegetarian" element={<Vegetarian />} />
+      <Route path="/details/:id" element={<RecipeDetails />} />
+      <Route path="/searched/:search" element={<Searched />} />
+    </Routes>
+  );
 };
 
 const AppWrapper = () => {
   return (
     <>
-      <Header />
       <Router>
         <App />
       </Router>
