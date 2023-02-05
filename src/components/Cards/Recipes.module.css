@@ -1,6 +1,7 @@
 .container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    grid-gap: 0.8rem;
 }
 
 .item {
@@ -9,8 +10,9 @@
     border-radius: 20px;
     background: #fff;
     line-height: 19px;
-    margin: 0.8rem auto;
+    margin: 0.3rem auto;
     cursor: pointer;
+    max-width: 330px;
 }
 
 .item:hover {
@@ -34,15 +36,8 @@
 }
 
 @media (min-width: 768px) {
-    .container {
-        flex-wrap: nowrap;
-    }
-
     .item {
+        margin: 0 0;
         width: 240px;
-    }
-
-    .item:not(:first-child) {
-        margin-left: -50px;
     }
 }
