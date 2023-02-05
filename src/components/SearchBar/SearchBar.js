@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { RecipesContext } from '../../store/Recipes-context';
 import classes from './SearchBar.module.css';
 
 function SearchBar() {
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
-  const ctx = useContext(RecipesContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
