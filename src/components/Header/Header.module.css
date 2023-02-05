@@ -1,0 +1,26 @@
+.header h1{
+    padding: .66rem 0;
+    text-align: center;
+    background-color: #cca353;
+    font-family: 'Allison', cursive, 'Open Sans', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../public/img/background_filter.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25rem;
+}
