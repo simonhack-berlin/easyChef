@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Recipes from './Recipes';
+import Recipes from './Cards/Recipes';
 
 function Recommended() {
     const [recommended, setRecommended] = useState([]);
