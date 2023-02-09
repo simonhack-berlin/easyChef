@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-    grid-gap: 0.8rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(257px, 1fr));
 }
 
 .item {
@@ -12,7 +12,7 @@
     line-height: 19px;
     margin: 0.3rem auto;
     cursor: pointer;
-    max-width: 330px;
+    max-width: 265px;
 }
 
 .item:hover {
@@ -36,6 +36,10 @@
 }
 
 @media (min-width: 768px) {
+    .container {
+        grid-gap: 1.99rem;
+    }
+
     .item {
         margin: 0 0;
         width: 240px;
