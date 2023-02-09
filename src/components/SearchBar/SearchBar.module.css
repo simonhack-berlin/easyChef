@@ -12,7 +12,7 @@
     padding: 0;
 }
   
-.searchbarOptions li>a {
+.searchbarOptions li {
     cursor: pointer;
     color: #ffffff;
     border-bottom: 1px solid #fff;
@@ -24,11 +24,11 @@
     transition: color .25s;
 }
   
-.searchbarOptions li a:hover {
+.searchbarOptions li:hover {
     color: #d4cfcf;
 }
   
-.searchbarOptions li a.active {
+.searchbarOptions li.active {
     border-bottom: 1px solid #f0c36c;
     color: #f0c36c;
 }
@@ -73,7 +73,7 @@
         width: auto;
     }
 
-    .searchbarOptions li>a {
+    .searchbarOptions li {
         padding: 0 2.58rem .33rem 2.58rem;
     }
   }

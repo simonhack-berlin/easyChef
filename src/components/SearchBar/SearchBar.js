@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { RecipesContext } from '../../store/Recipes-context';
 import classes from './SearchBar.module.css';
 
 function SearchBar() {
+  const {showRecipesTypes, setShowRecipesTypes} = useContext(RecipesContext);
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
 
@@ -13,13 +15,25 @@ function SearchBar() {
     }
   }
 
+  const getPopularHandler = () => {
+    setShowRecipesTypes('Popular')
+  }
+
+  const getVegetarianHandler = () => {
+    setShowRecipesTypes('Vegetarian')
+  }
+
+  const getVeganHandler = () => {
+    setShowRecipesTypes('Vegan')
+  }
+
   return (
     <div className={classes.searchbarContainer}>
       <div className={classes.searchbarOptions}>
         <ul>
-          <li><NavLink className={({ isActive }) => (isActive ? classes.active : 'inactive')} to='/'>Popular</NavLink></li>
-          <li><NavLink className={({ isActive }) => (isActive ? classes.active : 'inactive')} to='/vegetarian'>Vegetarian</NavLink></li>
-          <li><NavLink className={({ isActive }) => (isActive ? classes.active : 'inactive')} to='/vegan'>Vegan</NavLink></li>
+          <li className={showRecipesTypes === 'Popular' ? classes.active : ''} onClick={getPopularHandler} >Popular</li>
+          <li className={showRecipesTypes === 'Vegetarian' ? classes.active : ''} onClick={getVegetarianHandler}>Vegetarian</li>
+          <li className={showRecipesTypes === 'Vegan' ? classes.active : ''} onClick={getVeganHandler}>Vegan</li>
         </ul>
       </div>
       <div className={classes.searchbarFields}>

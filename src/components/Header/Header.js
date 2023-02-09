@@ -15,7 +15,12 @@ function Header(props) {
     <header className={classes.header}>
         <Link to="/"><h1>easyCHEF <GiKnifeFork /></h1></Link>
         
-          {searchBar && <div className={classes.container}><SearchBar /></div>}
+          {searchBar && (
+            <div className={classes.container}>
+              <SearchBar />
+            </div>
+            )
+          }
           {text && (
             <div className={classes.container}>
               <h2>{text}</h2>
