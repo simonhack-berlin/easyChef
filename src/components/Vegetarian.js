@@ -14,6 +14,7 @@ function VegetarianComponent() {
 
     if (check) {
       setVegetarian(JSON.parse(check));
+      setIsLoading(false);
     } else {
       const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=vegetarian&number=6`);
       const data = await api.json();
