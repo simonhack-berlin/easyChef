@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,6 +7,7 @@ import {
 import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
 import Searched from "./pages/Searched";
+import { RecipesContext } from "./store/Recipes-context";
 
 const App = () => {
   return (
@@ -18,10 +20,13 @@ const App = () => {
 };
 
 const AppWrapper = () => {
+  const [ showRecipesTypes, setShowRecipesTypes ] = useState('Popular');
   return (
     <>
       <Router>
-        <App />
+        <RecipesContext.Provider value={{showRecipesTypes, setShowRecipesTypes}}>
+          <App />
+        </RecipesContext.Provider> 
       </Router>
     </>
   );

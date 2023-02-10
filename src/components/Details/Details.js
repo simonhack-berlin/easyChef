@@ -40,7 +40,11 @@ function Details() {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <Header text='Loading...'/>
+      </>
+    )
   }
   
   const dishTypes = Object.values(details.dishTypes).join(', ');
@@ -54,9 +58,11 @@ function Details() {
       <div className={classes.wrapper}>
         <div className={classes.generalInfoWrapper}>
             <img src={details.image} alt={details.title} />
-            <div className={classes.generalInfo}>
-              <BiDish /> <span>{dishTypes}</span>
-            </div>
+            {dishTypes.length > 0 && (
+              <div className={classes.generalInfo}>
+                <BiDish /> <span>{dishTypes}</span>
+              </div>
+            )}
             <div className={classes.generalInfo}>
               <FaClock /> <span>Ready in {details.readyInMinutes} minutes</span>
             </div>
