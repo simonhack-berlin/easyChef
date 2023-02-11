@@ -5,10 +5,8 @@
 }
 
 .item {
-    box-shadow: 0 0 1.5rem 0 rgba(0,0,0,0.2);
     padding: 20px;
     border-radius: 20px;
-    background: #fff;
     line-height: 19px;
     margin: 0.3rem auto;
     cursor: pointer;

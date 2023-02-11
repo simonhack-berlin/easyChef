@@ -42,7 +42,7 @@ function VeganComponent() {
   }
 
   return (
-    <div className='margin'>
+    <div className='margin margin-bottom'>
         <h3>Vegan recipes</h3>
         <Recipes recipes={vegan} />
     </div>

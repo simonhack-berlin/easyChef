@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import { BiDish } from 'react-icons/bi'
 import { FaClock } from 'react-icons/fa';
 import classes from './Details.module.css';
+import { toHoursAndMinutes } from '../../helper/functions';
 
 function Details() {
   const [isActive, setIsActive] = useState('Instructions');
@@ -64,7 +65,7 @@ function Details() {
               </div>
             )}
             <div className={classes.generalInfo}>
-              <FaClock /> <span>Ready in {details.readyInMinutes} minutes</span>
+              <FaClock /> <span>{toHoursAndMinutes(details.readyInMinutes)}</span>
             </div>
             <div className={classes.generalInfo}>
               <h4 dangerouslySetInnerHTML={{ __html: details.summary }}></h4>
