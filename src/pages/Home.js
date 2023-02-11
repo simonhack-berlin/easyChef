@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Header from '../components/Header/Header';
 import Recommended from '../components/Recommended';
 import VeganComponent from '../components/Vegan';
-import VegetarianComponent from '../components/Vegan'
+import VegetarianComponent from '../components/Vegetarian';
 import { RecipesContext } from '../store/Recipes-context';
 
 function Home() {
