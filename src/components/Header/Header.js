@@ -13,6 +13,7 @@ function Header(props) {
   const {theme, setTheme} = useContext(ThemeContext);
   const cookies = new Cookies();
   const getTheme = cookies.get('theme');
+  cookies.set('theme', theme, { path: '/' });
 
   const navigate = useNavigate();
   const goBack = () => {
@@ -34,7 +35,7 @@ function Header(props) {
     <header className={classes.header}>
       <div className={classes.nav}>
         <Link to="/"><h1>easyCHEF <GiKnifeFork /></h1></Link>
-        {getTheme === 'light' ? <button className={classes.darkBtn} onClick={toggleTheme}><span className={classes.darkMod}>{theme}</span> <FaMoon /></button> : <button className={classes.lightBtn} onClick={toggleTheme}><BsFillSunFill /> <span className={classes.lightMod}>{theme}</span></button>}
+        {getTheme === 'light' ? <button className={classes.darkBtn} onClick={toggleTheme}><span className={classes.darkMod}>dark</span> <FaMoon /></button> : <button className={classes.lightBtn} onClick={toggleTheme}><BsFillSunFill /> <span className={classes.lightMod}>light</span></button>}
       </div> 
       {searchBar && (
         <div className={classes.container}>
