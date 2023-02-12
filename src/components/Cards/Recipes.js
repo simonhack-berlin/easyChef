@@ -10,6 +10,10 @@ function Recipes(props) {
     const cookies = new Cookies();
     const getTheme = cookies.get('theme');
 
+    if (!getTheme) {
+        cookies.set('theme', 'light', { path: '/' });
+    }
+
     if (recipes) {
         return (
             <div className={classes.container}>
