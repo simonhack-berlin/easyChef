@@ -27,8 +27,10 @@ function Header(props) {
 
   if (getTheme === 'dark') {
     document.body.classList.add('dark');
+    cookies.set('theme', 'dark', { path: '/' });
   } else {
     document.body.classList.remove('dark');
+    cookies.set('theme', 'light', { path: '/' });
   }
 
   return (
