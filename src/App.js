@@ -33,7 +33,7 @@ const AppWrapper = () => {
     } else {
       cookies.set('theme', theme, { path: '/' });
     }
-	}, [getTheme]);
+	}, [getTheme, theme]);
 
   return (
     <>
