@@ -2,10 +2,8 @@ import React from 'react';
 import SearchedComponent from '../components/Searched';
 
 function Searched() {
-  return (
-    <>  
-      <SearchedComponent />
-    </>
+  return ( 
+    <SearchedComponent />
   )
 }
 

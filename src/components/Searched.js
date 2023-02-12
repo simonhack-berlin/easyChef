@@ -7,6 +7,7 @@ import Header from './Header/Header';
 function SearchedComponent() {
   const {showRecipesTypes} = useContext(RecipesContext);
   const [searchedRecipes, setSearchedRecipes] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   let params = useParams();
 
   const getSearched = async (input, diet) => { 
@@ -14,11 +15,18 @@ function SearchedComponent() {
       const data = await api.json();
       // console.log(data);
       setSearchedRecipes(data.results);
+      setIsLoading(false);
   }
 
   useEffect(() => {
       getSearched(params.search, showRecipesTypes);
   }, [params.search, showRecipesTypes]);
+
+  if (isLoading) {
+    return (
+      <Header text='Loading...' />
+    )
+  }
   
   return (
     <>
