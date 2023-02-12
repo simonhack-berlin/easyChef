@@ -5,11 +5,11 @@ import {
   Route,
 } from "react-router-dom";
 import Cookies from "universal-cookie";
-import Home from "./Pages/Home";
-import RecipeDetails from "./Pages/RecipeDetails";
-import Searched from "./Pages/Searched";
-import { RecipesContext } from "./Store/Recipes-context";
-import { ThemeContext } from "./Store/Theme-context";
+import Home from "./pages/Home";
+import RecipeDetails from "./pages/RecipeDetails";
+import Searched from "./pages/Searched";
+import { RecipesContext } from "./store/Recipes-context";
+import { ThemeContext } from "./store/Theme-context";
 
 const App = () => {
   return (
