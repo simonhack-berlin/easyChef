@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,12 +27,14 @@ const AppWrapper = () => {
   const [ theme, setTheme ] = useState(getTheme);
   const [ showRecipesTypes, setShowRecipesTypes ] = useState('Popular');
 
-  if (!getTheme) {
-    cookies.set('theme', 'light', { path: '/' });
-  } else {
-    cookies.set('theme', theme, { path: '/' });
-  }
-  
+  useEffect(()=>{
+		if (getTheme === undefined) {
+      cookies.set('theme', 'light', { path: '/' });
+    } else {
+      cookies.set('theme', theme, { path: '/' });
+    }
+	}, [getTheme]);
+
   return (
     <>
       <Router>

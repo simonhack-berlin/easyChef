@@ -20,8 +20,6 @@ function Recipes(props) {
         }
 	}, [getTheme])
 
-    
-
     if (recipes) {
         return (
             <div className={classes.container}>
