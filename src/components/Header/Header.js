@@ -37,7 +37,7 @@ function Header(props) {
     <header className={classes.header}>
       <div className={classes.nav}>
         <Link to="/"><h1>easyCHEF <GiKnifeFork /></h1></Link>
-        {getTheme === 'light' ? (
+        {theme === 'light' ? (
           <button className={classes.darkBtn} onClick={toggleTheme}>
             <span className={classes.darkMod}>Dark</span> <FaMoon />
           </button>
