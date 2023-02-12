@@ -38,12 +38,12 @@ function Header(props) {
       <div className={classes.nav}>
         <Link to="/"><h1>easyCHEF <GiKnifeFork /></h1></Link>
         {theme === 'light' ? (
-          <button className={classes.darkBtn} onClick={toggleTheme}>
-            <span className={classes.darkMod}>Dark</span> <FaMoon />
-          </button>
-        ) : (
           <button className={classes.lightBtn} onClick={toggleTheme}>
             <BsFillSunFill /> <span className={classes.lightMod}>Light</span>
+          </button>
+        ) : (
+          <button className={classes.darkBtn} onClick={toggleTheme}>
+            <span className={classes.darkMod}>Dark</span> <FaMoon />
           </button>
         )}
       </div> 
