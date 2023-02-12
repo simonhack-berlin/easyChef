@@ -27,10 +27,10 @@ const AppWrapper = () => {
   const [ theme, setTheme ] = useState(getTheme);
   const [ showRecipesTypes, setShowRecipesTypes ] = useState('Popular');
 
-  if (getTheme) {
-    cookies.set('theme', theme, { path: '/' });
-  } else {
+  if (getTheme === undefined) {
     cookies.set('theme', 'light', { path: '/' });
+  } else {
+    cookies.set('theme', theme, { path: '/' });
   }
   
   return (
