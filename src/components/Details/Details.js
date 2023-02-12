@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import { BiDish } from 'react-icons/bi'
 import { FaClock } from 'react-icons/fa';
 import classes from './Details.module.css';
-import { toHoursAndMinutes } from '../../helper/functions';
+import { toHoursAndMinutes } from '../../Helper/Functions';
 
 function Details() {
   const [isActive, setIsActive] = useState('Instructions');

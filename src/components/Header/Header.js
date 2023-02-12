@@ -6,7 +6,7 @@ import { GiKnifeFork } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import classes from './Header.module.css';
-import { ThemeContext } from '../../store/Theme-context';
+import { ThemeContext } from '../../Store/Theme-context';
 
 function Header(props) {
   const {searchBar, text} = props;
@@ -35,7 +35,15 @@ function Header(props) {
     <header className={classes.header}>
       <div className={classes.nav}>
         <Link to="/"><h1>easyCHEF <GiKnifeFork /></h1></Link>
-        {getTheme === 'light' ? <button className={classes.darkBtn} onClick={toggleTheme}><span className={classes.darkMod}>dark</span> <FaMoon /></button> : <button className={classes.lightBtn} onClick={toggleTheme}><BsFillSunFill /> <span className={classes.lightMod}>light</span></button>}
+        {getTheme === 'light' ? (
+          <button className={classes.darkBtn} onClick={toggleTheme}>
+            <span className={classes.darkMod}>Dark</span> <FaMoon />
+          </button>
+        ) : (
+          <button className={classes.lightBtn} onClick={toggleTheme}>
+            <BsFillSunFill /> <span className={classes.lightMod}>Light</span>
+          </button>
+        )}
       </div> 
       {searchBar && (
         <div className={classes.container}>

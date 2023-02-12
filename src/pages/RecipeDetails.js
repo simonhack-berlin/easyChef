@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from '../components/Details/Details';
+import Details from '../Components/Details/Details';
 
 function RecipeDetails() {
     

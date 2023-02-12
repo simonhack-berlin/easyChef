@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchedComponent from '../components/Searched';
+import SearchedComponent from '../Components/Searched';
 
 function Searched() {
   return (

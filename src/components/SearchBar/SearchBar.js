@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RecipesContext } from '../../store/Recipes-context';
+import { RecipesContext } from '../../Store/Recipes-context';
 import classes from './SearchBar.module.css';
 
 function SearchBar() {
