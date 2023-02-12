@@ -28,12 +28,14 @@ const AppWrapper = () => {
   const [ showRecipesTypes, setShowRecipesTypes ] = useState('Popular');
 
   useEffect(()=>{
-		if (getTheme === undefined) {
-      cookies.set('theme', 'light', { path: '/' });
+		if (getTheme === 'dark') {
+      cookies.set('theme', 'dark', { path: '/' });
+      document.body.classList.add('dark');
     } else {
-      cookies.set('theme', theme, { path: '/' });
+      cookies.set('theme', 'light', { path: '/' });
+      document.body.classList.remove('dark');
     }
-	}, [getTheme, theme]);
+	}, [getTheme]);
 
   return (
     <>

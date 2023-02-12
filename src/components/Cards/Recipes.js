@@ -12,11 +12,14 @@ function Recipes(props) {
     const getTheme = cookies.get('theme');
 
     useEffect(()=>{
-		if (getTheme === undefined) {
+		if (getTheme === 'dark') {
+            setCardClass('card-dark');
+            document.body.classList.add('dark');
+            cookies.set('theme', 'dark', { path: '/' });
+        } else {
             cookies.set('theme', 'light', { path: '/' });
             setCardClass('card-light');
-        } else {
-            setCardClass(`card-${getTheme}`);
+            document.body.classList.remove('dark');
         }
 	}, [getTheme])
 
