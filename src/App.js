@@ -24,7 +24,7 @@ const App = () => {
 const AppWrapper = () => {
   const cookies = new Cookies();
   const getTheme = cookies.get('theme');
-  const [ theme, setTheme ] = useState(getTheme);
+  const [ theme, setTheme ] = useState('dark');
   const [ showRecipesTypes, setShowRecipesTypes ] = useState('Popular');
 
   useEffect(()=>{
