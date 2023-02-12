@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import Header from '../Components/Header/Header';
-import Recommended from '../Components/Recommended';
-import VeganComponent from '../Components/Vegan';
-import VegetarianComponent from '../Components/Vegetarian';
-import { RecipesContext } from '../Store/Recipes-context';
+import Header from '../components/Header/Header';
+import Recommended from '../components/Recommended';
+import VeganComponent from '../components/Vegan';
+import VegetarianComponent from '../components/Vegetarian';
+import { RecipesContext } from '../store/Recipes-context';
 
 function Home() {
   const {showRecipesTypes} = useContext(RecipesContext);

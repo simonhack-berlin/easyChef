@@ -2,7 +2,7 @@ import React from 'react';
 import { FaLeaf, FaClock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { toHoursAndMinutes } from '../../Helper/Functions';
+import { toHoursAndMinutes } from '../../helper/functions';
 import classes from './Recipes.module.css';
 
 function Recipes(props) {

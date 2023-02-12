@@ -6,7 +6,7 @@ import { GiKnifeFork } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import classes from './Header.module.css';
-import { ThemeContext } from '../../Store/Theme-context';
+import { ThemeContext } from '../../store/Theme-context';
 
 function Header(props) {
   const {searchBar, text} = props;
