@@ -13,6 +13,9 @@ function Header(props) {
   const {theme, setTheme} = useContext(ThemeContext);
   const cookies = new Cookies();
   const getTheme = cookies.get('theme');
+  if (!getTheme || getTheme === theme) {
+    setTheme('light');
+  }
   cookies.set('theme', theme, { path: '/' });
 
   const navigate = useNavigate();
