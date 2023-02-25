@@ -1,19 +1,14 @@
-import React, { useContext } from 'react';
-import Cookies from 'universal-cookie';
+import React, { useEffect, useState } from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
 import { FaMoon } from 'react-icons/fa';
 import { GiKnifeFork } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import classes from './Header.module.css';
-import { ThemeContext } from '../../store/Theme-context';
 
 function Header(props) {
   const {searchBar, text} = props;
-  const {theme, setTheme} = useContext(ThemeContext);
-  const cookies = new Cookies();
-  const getTheme = cookies.get('theme');
-  cookies.set('theme', theme, { path: '/' });
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   const navigate = useNavigate();
   const goBack = () => {
@@ -22,28 +17,24 @@ function Header(props) {
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
-    cookies.set('theme', theme, { path: '/' });
   }
 
-  if (getTheme === 'dark') {
-    document.body.classList.add('dark');
-    cookies.set('theme', 'dark', { path: '/' });
-  } else {
-    document.body.classList.remove('dark');
-    cookies.set('theme', 'light', { path: '/' });
-  }
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <header className={classes.header}>
       <div className={classes.nav}>
         <Link to="/"><h1>easyCHEF <GiKnifeFork /></h1></Link>
         {theme === 'light' ? (
-          <button className={classes.lightBtn} onClick={toggleTheme}>
-            <BsFillSunFill /> <span className={classes.lightMod}>Light</span>
-          </button>
-        ) : (
           <button className={classes.darkBtn} onClick={toggleTheme}>
             <span className={classes.darkMod}>Dark</span> <FaMoon />
+          </button>
+        ) : (
+          <button className={classes.lightBtn} onClick={toggleTheme}>
+            <BsFillSunFill /> <span className={classes.lightMod}>Light</span>
           </button>
         )}
       </div> 
