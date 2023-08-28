@@ -17,18 +17,18 @@ function Details() {
     e.preventDefault();
     setIsActive(e.target.value);
   }
-
-  const fetchDetails = async () => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
-      );
-    const detailData = await data.json();
-    setIsLoading(false);
-    console.log(detailData)
-    setDetails(detailData);
-  }
-
+  
   useEffect(() => {
+    const fetchDetails = async () => {
+      const data = await fetch(
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+        );
+      const detailData = await data.json();
+      setIsLoading(false);
+      console.log(detailData)
+      setDetails(detailData);
+    }
+  
     fetchDetails();
   }, [id]);
 
