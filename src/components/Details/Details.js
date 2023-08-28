@@ -84,9 +84,9 @@ function Details() {
           )}
           {isActive === 'Ingredients' && (
             <ul className={classes.ingredientsList}>
-              {details.extendedIngredients.map((ingredient) => {
+              {details.extendedIngredients.map((ingredient, index) => {
                 return (
-                  <li key={ingredient.id}>{ingredient.original}</li>
+                  <li key={index}>{ingredient.original}</li>
                 )
               })}
             </ul>
