@@ -22,10 +22,10 @@ function Details() {
     const fetchDetails = async () => {
       const data = await fetch(
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
-        );
+      );
       const detailData = await data.json();
       setIsLoading(false);
-      console.log(detailData)
+      // console.log(detailData)
       setDetails(detailData);
     }
   
@@ -68,10 +68,7 @@ function Details() {
               <FaClock /> <span>{toHoursAndMinutes(details.readyInMinutes)}</span>
             </div>
             <div className={classes.generalInfo}>
-              <h4 dangerouslySetInnerHTML={{ __html: details.summary }}></h4>
-            </div>
-            <div className={classes.generalInfo}>
-              <p>{details.winePairing.pairingText}</p>
+              <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
             </div>
         </div>
         <div className={classes.info}>
